@@ -5,10 +5,6 @@ public class Rectangle
   private int width;
   private int height;
 
-  public Rectangle()
-  {
-  }
-
   public Rectangle(int width, int height)
   {
     this.width = width;
@@ -20,9 +16,9 @@ public class Rectangle
     return width;
   }
 
-  public void setWidth(int width)
+  public Rectangle setWidth(int width)
   {
-    this.width = width;
+    return new Rectangle(width, height);
   }
 
   public int getHeight()
@@ -30,9 +26,9 @@ public class Rectangle
     return height;
   }
 
-  public void setHeight(int height)
+  public Rectangle setHeight(int height)
   {
-    this.height = height;
+    return new Rectangle(width, height);
   }
 
   public int area ()

@@ -44,6 +44,13 @@ In command line mode:
     $ cd square-rectangle-lsp
     $ mvn exec:java
 
+This will display the result below:
+
+    >>> Square width: 20
+    >>> Square height: 20
+    >>> Square size: 20
+    >>> Square area: 400
+
 ## Running in IntelliJ IDEA
 
 In the `Project` pane, right click on the `Main` class and select `Run Main.main()`

@@ -4,7 +4,7 @@ public class Main
 {
   public static void main(String[] args)
   {
-    Square square = new Square();
+    Square square = new Square(10);
     square.setWidth(10);
     square.setHeight(20);
     System.out.println(">>> Square width: " + square.getWidth());
