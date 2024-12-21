@@ -1,15 +1,40 @@
 # Square, Rectangle and the Liskov Substitution Principle
 
 This test aims at proving that, as opposed to what this [article](https://medium.com/@alex24dutertre/square-rectangle-and-the-liskov-substitution-principle-ee1eb8433106) states,
-the `Square` class can be an extension of the `Rectangle` one, without violating LSP.
+the class hierarchy shown in the diagram below:
 
-This implementation of Square satisfies LSP because:
+<img src="Square.png" width="300" height="300" />
 
-  - The base Rectangle class is immutable and Square maintains this immutability.
-  - The `setSize()` method returns a new Square instance rather than modifying the existing one, preserving immutability.
+is perfectly accurate because:
+
+  - It doesn't violate the **Liskov Substitution Principle** (LSP).
+  - It doesn't violate the **Single Responsibility Principle** (SRP).
+  - It doesn't violate the **Open-Closed Principle** (OCP).
+
+This implementation doesn't violate LSP:
+
+  - The base `Rectangle` class is immutable and `Square` maintains this immutability.
+  - The `setSize()` method returns a new `Square` instance rather than modifying the existing one, preserving immutability.
   - `Square` doesn't override any of `Rectangle` core behaviors (width, height, area, perimeter calculations)
   - The additional methods `getSize()` and `setSize()` don't alter or contradict Rectangle's behavior.
-  - Any code that works with Rectangle will work correctly with Square without knowing it's a Square
+  - Any code that works with `Rectangle` will work correctly with `Square` without knowing it's a `Square`
+
+The implementation doesn't violate SRP:
+
+  - The `Square` class Has a single, clear purpose: representing a square.
+  - All its methods are directly related to that purpose.
+  - It has only one reason to change: if the way we represent or handle squares needs to change.
+  - It maintains cohesion: all its methods work with the same data and serve the same purpose.
+
+The implementation doesn't violate OCP:
+
+  - The `Square` class is effectively closed for modification.
+  - It extends `Rectangle` without modifying its behavior.
+  - Its immutable design means core behaviors don't need to change.
+  - New functionality can be added to it through:
+    - Further extension (creating new subclasses of `Square` if needed)
+    - Composition (using `Square` as part of other classes)
+    - Adding new methods without changing existing ones.
 
 ## Testing and running
 
