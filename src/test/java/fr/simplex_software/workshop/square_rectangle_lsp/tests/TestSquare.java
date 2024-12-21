@@ -8,9 +8,7 @@ public class TestSquare
   @Test
   public void testSquare()
   {
-    Square square = new Square();
-    square.setWidth(10);
-    square.setHeight(20);
+    Square square = new Square(20);
     Assertions.assertEquals(20, square.getWidth());
     Assertions.assertEquals(20, square.getHeight());
     Assertions.assertEquals(400, square.area());
